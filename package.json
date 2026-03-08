@@ -23,7 +23,8 @@
     "fmt": "prettier --write '**/*.{tsx,ts,json,css,scss,md}'",
     "process-icons": "node scripts/process-icons.js",
     "zip": "npm run build && npm run process-icons && node src/zip.js",
-    "upload": "node scripts/upload.js"
+    "upload": "node scripts/upload.js",
+    "update-listing": "node scripts/update-listing.js"
   },
   "dependencies": {
     "react": "^18.2.0",

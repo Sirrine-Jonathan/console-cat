@@ -1,0 +1,8 @@
+{
+  "name": "Console Cat",
+  "summary": "Copy console entries like a copycat. Select, filter, and copy browser console logs with deduplication and tag filtering.",
+  "description": "Console Cat is a Chrome DevTools extension that makes it easy to copy console entries for debugging, documentation, or sharing with AI assistants.\n\nFeatures:\n• Select individual or multiple console entries with shift-click\n• Filter by log level (Error, Warning, Info, Log, Verbose)\n• Text search across all messages\n• Automatic tag detection and filtering (e.g., [ComponentName])\n• Smart deduplication - repeated messages are combined with count\n• Copy preview showing exactly what will be copied\n• Timestamps included in copied output\n• Works on all websites, including those with strict CSP\n\nPerfect for:\n• Debugging complex applications\n• Sharing logs with team members\n• Providing context to AI coding assistants\n• Documentation and bug reports\n\nThe extension adds a \"Console Cat\" tab to Chrome DevTools where you can view, filter, and selectively copy console messages in a clean, LLM-friendly format.",
+  "category": "developer_tools",
+  "publicKey": "",
+  "language": "en"
+}

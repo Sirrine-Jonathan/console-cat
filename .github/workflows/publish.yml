@@ -25,6 +25,14 @@ jobs:
       - name: Build and zip
         run: npm run zip
 
+      - name: Update Store Listing Metadata
+        run: npm run update-listing
+        env:
+          EXTENSION_ID: ${{ secrets.EXTENSION_ID }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
+
       - name: Upload to Chrome Web Store
         run: npm run upload
         env:
