@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Console Cat</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      if (window.location.hash === '#panel') {
+        // Load the React app for the panel
+        import('./src/devtools/index.tsx')
+      } else {
+        // Create the panel
+        chrome.devtools.panels.create('Console Cat', '', 'devtools.html#panel')
+      }
+    </script>
+  </body>
+</html>

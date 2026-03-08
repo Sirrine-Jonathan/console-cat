@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.copy-console {
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 12px;
+  background: #242424;
+  color: #ccc;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #000;
+  border-bottom: 1px solid #333;
+}
+
+.toolbar-logo {
+  display: flex;
+  align-items: center;
+  padding-right: 12px;
+  border-right: 1px solid #333;
+}
+
+.toolbar-logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.toolbar-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbar-row:first-child {
+  gap: 6px;
+}
+
+.filter-input {
+  padding: 4px 8px;
+  background: #2a2a2a;
+  border: 1px solid #555;
+  color: #ccc;
+  border-radius: 3px;
+  font-size: 11px;
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.level-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.level-filters label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.toolbar button {
+  padding: 4px 12px;
+  background: #3c3c3c;
+  border: 1px solid #555;
+  color: #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.toolbar button:hover:not(:disabled) {
+  background: #4c4c4c;
+}
+
+.toolbar button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toolbar .spacer {
+  flex: 1;
+}
+
+.toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.tag-filters {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #333;
+  flex-wrap: wrap;
+}
+
+.tag-pill {
+  padding: 3px 10px;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #aaa;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 10px;
+  transition: all 0.2s;
+}
+
+.tag-pill:hover {
+  background: #3a3a3a;
+  border-color: #555;
+}
+
+.tag-pill.active {
+  background: #2a5a8a;
+  border-color: #4a7aaa;
+  color: #fff;
+}
+
+.entries {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.entry {
+  display: flex;
+  gap: 8px;
+  padding: 4px 8px;
+  border-bottom: 1px solid #2a2a2a;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.entry:hover {
+  background: #2a2a2a;
+}
+
+.entry.selected {
+  background: #1a3a5a;
+}
+
+.entry input[type='checkbox'] {
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.entry .type {
+  font-weight: bold;
+  min-width: 60px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.entry.error .type {
+  color: #f48771;
+}
+.entry.warn .type {
+  color: #e5c07b;
+}
+.entry.info .type {
+  color: #61afef;
+}
+.entry.log .type {
+  color: #98c379;
+}
+.entry.verbose .type {
+  color: #abb2bf;
+}
+
+.entry .time {
+  font-size: 10px;
+  color: #666;
+  min-width: 80px;
+}
+
+.entry .message {
+  flex: 1;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.copy-preview {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  background: #1a1a1a;
+}
+
+.copy-preview pre {
+  margin: 0;
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 12px;
+  color: #ccc;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
