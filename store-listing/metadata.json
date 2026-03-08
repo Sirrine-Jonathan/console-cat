@@ -13,5 +13,13 @@
       }
     ],
     "data_usage_justification": "Console Cat does not collect, store, or transmit any user data. All processing is done locally in the browser's DevTools environment."
-  }
+  },
+  "icon_url": "https://jonathansirrine.com/console-cat/logo.png",
+  "screenshots": [
+    {
+      "src": "https://jonathansirrine.com/console-cat/promo-large.png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    }
+  ]
 }
