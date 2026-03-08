@@ -38,16 +38,16 @@ async function updateListing() {
                 headers: {
                     Authorization: `Bearer ${accessToken}`,
                     'x-goog-api-version': '2'
-                }
+                },
+                validateStatus: (status) => (status >= 200 && status < 300) || status === 304
             }
         );
 
-        if (response.data.error) {
-            console.error('❌ API Error:', JSON.stringify(response.data.error, null, 2));
-            process.exit(1);
+        if (response.status === 304) {
+            console.log('✅ Store listing is already up to date (304 Not Modified).');
+        } else {
+            console.log('✅ Store listing metadata updated successfully!');
         }
-
-        console.log('✅ Store listing metadata updated successfully!');
         
     } catch (error) {
         console.error('❌ Request failed:', error.response?.data || error.message);
