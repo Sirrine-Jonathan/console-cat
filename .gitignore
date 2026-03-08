@@ -25,3 +25,5 @@ node_modules
 build
 package
 .env
+
+client_secret_*.json
