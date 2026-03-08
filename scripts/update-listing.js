@@ -31,6 +31,7 @@ async function updateListing() {
     const accessToken = await getAccessToken();
 
     try {
+        // 1. Update the metadata
         const response = await axios.put(
             `https://www.googleapis.com/chromewebstore/v1.1/items/${EXTENSION_ID}`,
             metadata,
@@ -48,6 +49,21 @@ async function updateListing() {
         } else {
             console.log('✅ Store listing metadata updated successfully!');
         }
+
+        // 2. Fetch the current draft state to verify
+        console.log('🔍 Verifying draft state...');
+        const draftResponse = await axios.get(
+            `https://www.googleapis.com/chromewebstore/v1.1/items/${EXTENSION_ID}?projection=DRAFT`,
+            {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                    'x-goog-api-version': '2'
+                }
+            }
+        );
+        
+        console.log('📝 Draft Name:', draftResponse.data.title);
+        console.log('📝 Draft Summary:', draftResponse.data.summary);
         
     } catch (error) {
         console.error('❌ Request failed:', error.response?.data || error.message);
